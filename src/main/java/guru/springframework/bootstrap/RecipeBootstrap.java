@@ -66,11 +66,10 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.setDirections("just make guac");
         Notes guacNotes = new Notes();
         guacNotes.setRecipeNotes("this is guac");
-        guacNotes.setRecipe(guacRecipe);
         guacRecipe.setNotes(guacNotes);
 
-        guacRecipe.getIngredients().add(new Ingredient("avocados", new BigDecimal(2), eachUOM, guacRecipe));
-        guacRecipe.getIngredients().add(new Ingredient("onion", new BigDecimal(2), tablespoonUOM, guacRecipe));
+        guacRecipe.addIngredient(new Ingredient("avocados", new BigDecimal(2), eachUOM));
+        guacRecipe.addIngredient(new Ingredient("onion", new BigDecimal(2), tablespoonUOM));
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
